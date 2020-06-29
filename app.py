@@ -40,6 +40,6 @@ def opendota_call():
     print('end')
 
 
-threading.Thread(target=opendota_call())
+opendota_call()
 if __name__ == '__main__':
     app.run(debug=True)
