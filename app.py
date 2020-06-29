@@ -45,6 +45,6 @@ def opendota_call():
     time.sleep(3)
     print('end')
     
-threading.Thread(target=opendota_call(), args=(x, random.random())).start()
+threading.Thread(target=opendota_call())
 if __name__ == '__main__':
     app.run(debug=True)
