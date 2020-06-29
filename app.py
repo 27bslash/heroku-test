@@ -37,7 +37,6 @@ def opendota_call():
     # time.sleep(60)
     for i in range(5):
         print('second')
-    time.sleep(3)
     print('end')
 
 
