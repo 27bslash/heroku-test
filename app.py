@@ -6,8 +6,6 @@ from parsel import Selector
 import time
 from operator import itemgetter
 import threading
-from helper_funcs.helper_functions import *
-from opendota_api import *
 
 app = Flask(__name__)
 cache = Cache(config={
