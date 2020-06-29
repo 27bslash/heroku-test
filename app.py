@@ -23,6 +23,13 @@ def opendota_call():
     print('test')
 
 
+def foo(x, s):
+    time.sleep(s)
+    print("%s %s %s" % (threading.current_thread(), x, s))
+
+for x in range(4):
+    threading.Thread(target=foo, args=(x, random.random())).start()
+
 if __name__ == '__main__':
     thread1 = threading.Thread(target=opendota_call)
     thread1.start()
