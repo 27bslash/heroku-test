@@ -19,19 +19,32 @@ cache.init_app(app)
 def hello():
     return 'hello'
 
-
-def opendota_call():
-    print('test')
-
-
 def foo(x, s):
     time.sleep(s)
     print("%s %s %s" % (threading.current_thread(), x, s))
 
-for x in range(4):
-    threading.Thread(target=opendota_call(), args=(x, random.random())).start()
 
+def opendota_call():
+    names = []
+    out = []
+    print('input')
+    with open('json_files/hero_ids.json', 'r') as f:
+        data = json.load(f)
+        for i in data['heroes']:
+            names.append(i['name'])
+        # for name in names:
+        #     pass
+            # asyncio.run(pro_request(name, out, 100))
+    with open('json_files/hero_ids.json', 'r') as f:
+        data = json.load(f)
+        for name in names:
+            # asyncio.run(main(get_urls(20, name, name)))
+            delete_output()
+            # time.sleep(60)
+            print('second')
+    time.sleep(3)
+    print('end')
+    
+threading.Thread(target=opendota_call(), args=(x, random.random())).start()
 if __name__ == '__main__':
-    thread1 = threading.Thread(target=opendota_call)
-    thread1.start()
     app.run(debug=True)
